@@ -35,14 +35,19 @@ eBPF 프로그램은 네트워크 스택의 다양한 지점을 통과하는 네
 
 
 ### XDP(eXpress Data Path)
-
+(작성 예정)
 
 ### Flow Dissector
+(작성 예정)
+
+
 
 ### Lightweight Tunnels
+(작성 예정)
+
 
 ### Cgroups(제어 그룹)
 - Linux 커널에서 프로세스 또는 일부 프로세스 그룹이 액세스할 수 있는 리소스 집합을 제한하는 개념
 - 컨테이너나 Kubernetes Pod 과 같은 것들을 서로 분리하는 매커니즘 중 하나
 - eBPF 프로그램을 cgroup에 연결하면 해당 cgroup의 프로세스에만 적용되는 사용자 정의 동작을 수행할 수 있다.
-- 모든 프로세스는 cgroup 과 연관되어 있으며 컨테이너 내에서 실행되지 않는 프로세스도 cgroup 에 속한다.ㅊ
+- 모든 프로세스는 cgroup 과 연관되어 있으며 컨테이너 내에서 실행되지 않는 프로세스도 cgroup 에 속한다.

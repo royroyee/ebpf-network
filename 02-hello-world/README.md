@@ -1,7 +1,7 @@
 # Hello World 
 
 
-## BCC's Python Library 를 이용한 Hello World (Baisc)
+## BCC's Python Library 를 이용한 Hello World (Basic)
 ```
 #!/usr/bin/python
 
