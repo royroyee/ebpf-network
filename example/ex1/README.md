@@ -3,7 +3,7 @@
 ### [Traffic Control 에 대해서](https://github.com/royroyee/ebpf-network/tree/main/networking/traffic-control#traffic-control-tc)
 
 
-## tc-bpf example - Drop ICMP
+## tc-bpf example : Drop ICMP
 - [참고 자료](https://gist.github.com/anfredette/732eeb0fe519c8928d6d9c190728f7b5)
 
 ### drop-icmp.c
@@ -104,6 +104,12 @@ sudo tc qdisc add dev ens160 clsact
 #### 참고 : 해당 인터페스의 qdisc 확인하기
 ```
 tc qdisc show dev ens160
+```
+
+#### 참고 : 인터페이스의 index 확인하기
+```cgo
+$ cat /sys/class/net/br0/ifindex
+13
 ```
 
 #### 2. Create an ingress filter to drop icmp packets

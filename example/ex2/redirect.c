@@ -1,9 +1,12 @@
+#include <linux/bpf.h>
+#include <linux/pkt_cls.h>
+#include <linux/if_ether.h>
+#include <linux/ip.h>
+#include <linux/tcp.h>
+#include <arpa/inet.h>
+#include <bpf/bpf_helpers.h>
+#include <linux/if_arp.h>
 
-
-## tc-bpf example : Redirection
-
-### Code
-```
 __attribute__((section("ingress"), used))
 int forward_arp_broadcast(struct __sk_buff *skb) {
 
@@ -41,19 +44,3 @@ int forward_arp_broadcast(struct __sk_buff *skb) {
   // Return TC_ACT_UNSPEC for other packets to be processed by the next classifier
     return TC_ACT_UNSPEC;
 }
-```
-
-
-- `bpf_clone_redirect()` : 패킷의 복제본을 생성하고, 리다이렉션 시킬 인터페이스 인덱스를 입력하여 리다이렉션 시킨다. 
-  - `skb` : 리다이렉트할 패킷에 대한 포인터
-  - `index` : 리다이렉트할 대상 인터페이스 인덱스
-  - `flags` : 리다이렉트 동작에 대한 플래그. 0 : 기본 동작 유지 (일반적으로 0 사용)
-  - 복제본을 생성하여 리다이렉션 시키기 때문에, 원본 패킷에 대한 처리가 필요하다. (여기선 `TC_ACT_SHOT` 으로 원본 패킷 Drop)
-
-
-
-
-### bridge interface index 확인하기
-```cgo
-cat /sys/class/net/br0/ifindex
-```
