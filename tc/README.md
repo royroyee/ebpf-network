@@ -17,7 +17,7 @@ sudo apt install python3-bpfcc
 ```
 ### [golang 설치](https://tecadmin.net/how-to-install-go-on-ubuntu-20-04/) 
 ```
-sudo apt install golang # 최신버전이 아닐 수 있음 (1.18깔렸었음)
+sudo apt install golang # 최신버전이 아닐 수 있음 
 go version
 ```
 
@@ -50,11 +50,6 @@ sudo cat /sys/kernel/debug/tracing/trace_pipe
 ```
 
 
-### eBPF Map
-(작성 예정)
-
-
----
 
 
 ### TC code
@@ -109,16 +104,10 @@ sudo tc qdisc del dev ens160 clsact
 - 기존에 clasct qdisc 가 있다면 유의할 것
 
 ### Example
-- [ex1 : ICMP Drop](https://github.com/royroyee/ebpf-network/tree/main/example/ex1)
-- [ex2 : Redirection](https://github.com/royroyee/ebpf-network/tree/main/example/ex2)
+- [ex1 : ICMP Drop]()
+- [ex2 : Redirection]()
 - [ex3 : Create ARP Reply Packet]()
  
-
----
-
-### XDP code
-(작성 예정)
-
 
 
 
